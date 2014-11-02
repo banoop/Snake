@@ -1,0 +1,17 @@
+package Snake;
+
+import zen.core.Zen;
+
+public class Food {
+int x;
+int y;
+
+public void Setup( int a, int b){
+	x = a;
+	y = b;
+}
+public void draw() {
+		Zen.fillOval(x,y,10,10);
+	}
+
+}
