@@ -1,0 +1,32 @@
+package Snake;
+
+import zen.core.Zen;
+
+public class SnakeGame {
+
+	public static void main(String[] args) {
+		Zen.create(500, 500);
+		
+		Snake s = new Snake();
+		Food f = new Food();
+		f.Setup(200, 200);
+		while(true) {
+			Zen.setBackground("black");
+			
+			s.draw();
+			s.check();
+			s.move();
+			f.draw();
+			
+			if (s.isEating(f)) {
+				
+				f.Setup(Zen.getRandomNumber(1,49) * 10, Zen.getRandomNumber(1,49)* 10 );
+				s.grow();
+			}
+			
+			Zen.buffer(100);
+			
+		}
+	}
+
+}
